@@ -22,7 +22,7 @@ function parseMoney(amtStr) {
         centString += "and "
         if(cents.length == 1) {
             //Pad with a zero if single digit
-            centString += "0"
+            cents = cents + "0";
         }
         centString+= cents + "/100 "
 
