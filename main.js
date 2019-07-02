@@ -1,11 +1,13 @@
 //Main function 
 function parseMoney(amtStr) {
-    amtStr = amtStr.replace(/,/g, ""); //Strip out commas 
+    //Strip out commas 
+    amtStr = amtStr.replace(/,/g, ""); 
     var centString = "";
     var dollarString = "";
     var parsedString = "";
     if(amtStr.charAt(0) === '$') {
-        parsedString = amtStr.substr(1); //Strip out $
+        //Strip out $
+        parsedString = amtStr.substr(1); 
     } else {
         return "Not a valid dollar amount (needs a $)";
     }
@@ -27,7 +29,6 @@ function parseMoney(amtStr) {
         centString+= cents + "/100 "
 
     } else if(splitAmount.length === 1) {
-        
         // centString += "and 00/100 "; // This might be optional, depending upon whether or not you would rather have "and 00/000" or just leaving it out.
     } else {
         return "Not a valid dollar amount";
@@ -57,7 +58,8 @@ function parseDollars(dollars) {
         var end = 3 
         if(start < 0) {
             start = 0;
-            end = start + i; // If i is between 0 and 3 non-inclusive it's going to be 1 or 2 here, the length of the substring.
+            // If i is between 0 and 3 non-inclusive it's going to be 1 or 2 here, the length of the substring.
+            end = start + i; 
         }
         splitDollarsArray.push(dollars.substr(start, end));
     }
@@ -91,7 +93,8 @@ function parseDollars(dollars) {
             }
             parsedString += scales[i];
         } else if (firstDollarChunk > 0) {
-            parsedString += scales[i]; //Throw in the scale (hundred, thousand, etc) for chunks that start with a 0. 
+            //Throw in the scale (hundred, thousand, etc) for chunks that start with a 0. 
+            parsedString += scales[i]; 
         }
         
 
