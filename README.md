@@ -9,5 +9,3 @@ $2523.04
 ~~~~
 "Two thousand five hundred twenty-three and 04/100 dollars" 
 ~~~~
-
-## Curently hosted at http://dollars.treevs.com
