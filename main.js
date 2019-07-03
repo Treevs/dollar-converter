@@ -2,6 +2,8 @@
 function parseMoney(amtStr) {
     //Strip out commas 
     amtStr = amtStr.replace(/,/g, ""); 
+    
+    
     var centString = "";
     var dollarString = "";
     var parsedString = "";
@@ -10,6 +12,10 @@ function parseMoney(amtStr) {
         parsedString = amtStr.substr(1); 
     } else {
         return "Not a valid dollar amount (needs a $)";
+    }
+    //Used regex string from here: https://stackoverflow.com/questions/8829765/regular-expression-for-dollar-amount-in-javascript
+    if(! /^\$?[0-9]+(\.[0-9][0-9])?$/.test(amtStr)) {
+        return "Not a valid dollar amount";
     }
     var splitAmount = parsedString.split('.');
     var dollars = splitAmount[0];
